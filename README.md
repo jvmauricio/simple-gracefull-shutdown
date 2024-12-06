@@ -11,7 +11,7 @@ This is usefull if your server is using UPS. When the electricity or internet is
 ### How to use
 
 
-Git clone the repo and create a cron schedule (preferably every 5 mins) to execute the script.
+Git clone the repo and create a cron schedule (preferably every 5 mins) to execute the network_check.sh script.
 
 
 ### Optional wake-on-lan

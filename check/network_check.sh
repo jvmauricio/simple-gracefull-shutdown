@@ -10,7 +10,7 @@ IFDOWN="/sbin/ifdown --force"
 
 INTERFACE="eth0"
 
-FFLAG="~/check/stuck.fflg" #check to where you will put your network_check.sh script
+FFLAG="~/check/stuck.fflg" #flag for delay. edit to where you will put your network_check.sh script
 
 # ping test
 $PING -c $PING_COUNT $IP_FOR_TEST > /dev/null 2> /dev/null

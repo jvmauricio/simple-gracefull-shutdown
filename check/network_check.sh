@@ -21,6 +21,7 @@ then
         if [ -e $FFLAG ]
         then
                 logger "$INTERFACE is still down, REBOOT to recover ..."
+               # put email here if you want to be notified of the shutdown event
                # echo "Target IP not detected, house might not have power. shutting down $(hostname)" | mail -s "ALERT NO POWER" <YOUR EMAIL HERE>@gmail.com
                 rm -f $FFLAG 2>/dev/null
                 sudo shutdown now

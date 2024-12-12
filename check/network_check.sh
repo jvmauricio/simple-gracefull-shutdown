@@ -8,6 +8,7 @@ PING="/bin/ping"
 IFUP="/sbin/ifup"
 IFDOWN="/sbin/ifdown --force"
 
+#change your interface
 INTERFACE="eth0"
 
 FFLAG="~/check/stuck.fflg" #flag for delay. edit to where you will put your network_check.sh script
@@ -20,6 +21,7 @@ then
         if [ -e $FFLAG ]
         then
                 logger "$INTERFACE is still down, REBOOT to recover ..."
+               # echo "Target IP not detected, house might not have power. shutting down $(hostname)" | mail -s "ALERT NO POWER" <YOUR EMAIL HERE>@gmail.com
                 rm -f $FFLAG 2>/dev/null
                 sudo shutdown now
         else
@@ -28,5 +30,6 @@ then
                 sleep 10
                 logger $(sudo $IFUP $INTERFACE)
         fi
-else
+#else
 #    logger "$INTERFACE is up"
+fi
